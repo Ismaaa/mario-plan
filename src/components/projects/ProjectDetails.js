@@ -9,7 +9,7 @@ const ProjectDetails = ({ computedMatch }) => {
     <div className="container section project-details">
       <div className="card z-depth-0">
         <div className="card-content">
-          <span className="card-title">Project Title #{id}</span>
+          <span className="card-title">#{id} - Project Title</span>
           <p>
             Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laboriosam
             perferendis voluptatem facilis vel velit cum sequi molestias, aut
