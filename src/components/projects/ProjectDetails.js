@@ -1,6 +1,6 @@
+/* eslint-disable react/prop-types */
 // libs
 import React from "react";
-import PropTypes from "prop-types";
 
 const ProjectDetails = ({ computedMatch }) => {
   const { id } = computedMatch.params;
@@ -23,10 +23,6 @@ const ProjectDetails = ({ computedMatch }) => {
       </div>
     </div>
   );
-};
-
-ProjectDetails.propTypes = {
-  computedMatch: PropTypes.isRequired,
 };
 
 export default ProjectDetails;
