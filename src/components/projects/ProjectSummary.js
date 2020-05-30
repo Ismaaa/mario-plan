@@ -9,6 +9,7 @@ const ProjectSummary = ({ id, title, content }) => {
         <span className="card-title">
           #{id} - {title}
         </span>
+        <p>Posted by Ismail Didouh</p>
         <p className="grey-text">{content}</p>
       </div>
     </div>
