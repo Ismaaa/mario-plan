@@ -1,12 +1,10 @@
-/* eslint-disable react/jsx-one-expression-per-line */
 /* eslint-disable react/prop-types */
-/* eslint-disable react/destructuring-assignment */
 
 // libs
 import React from "react";
 
-const ProjectDetails = (props) => {
-  const { id } = props.computedMatch.params;
+const ProjectDetails = ({ computedMatch }) => {
+  const { id } = computedMatch.params;
 
   return (
     <div className="container section project-details">

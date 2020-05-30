@@ -1,13 +1,14 @@
 // libs
 import React from "react";
 
-const ProjectSummary = () => {
+const ProjectSummary = ({ id, title, content }) => {
   return (
     <div className="card z-depth-0 project-summary">
       <div className="card-content grey-text text-darken-3">
-        <span className="card-title">Project Title</span>
-        <p>Posted by Ismail Didouh</p>
-        <p className="grey-text">30th of May, 2020 - 14:54</p>
+        <span className="card-title">
+          {title}#{id}
+        </span>
+        <p className="grey-text">{content}</p>
       </div>
     </div>
   );
