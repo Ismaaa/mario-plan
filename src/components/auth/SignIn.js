@@ -1,30 +1,33 @@
 import React, { Component } from "react";
 
 class SignIn extends Component {
+  state = {
+    email: "",
+    password: "",
+  };
+
+  handleChange = (e) => {
+    this.setState({
+      [e.target.id]: e.target.value
+    });
+  };
+
+  handleSubmit = (e) => {
+    e.preventDefault();
+    console.log("submitted");
+  };
+
   render() {
-    const handleEmailChange = (val) => {
-      console.log(val);
-    };
-
-    const handlePasswordChange = (val) => {
-      console.log(val);
-    };
-
-    const handleSubmit = (e) => {
-      e.preventDefault();
-      console.log("submitted");
-    };
-
     return (
       <div className="container">
-        <form onSubmit={handleSubmit} className="white">
+        <form onSubmit={this.handleSubmit} className="white">
           <h5 className="grey-text text-darken-3">Sign In</h5>
           <div className="input-field">
             <label htmlFor="email">Email</label>
             <input
               id="email"
               type="email"
-              onChange={(e) => handleEmailChange(e.target.value)}
+              onChange={(e) => this.handleChange(e)}
             />
           </div>
 
@@ -33,7 +36,7 @@ class SignIn extends Component {
             <input
               id="password"
               type="password"
-              onChange={(e) => handlePasswordChange(e.target.value)}
+              onChange={(e) => this.handleChange(e)}
             />
           </div>
 
