@@ -30,20 +30,12 @@ class SignIn extends Component {
           <h5 className="grey-text text-darken-3">Sign In</h5>
           <div className="input-field">
             <label htmlFor="email">Email</label>
-            <input
-              id="email"
-              type="email"
-              onChange={(e) => this.handleChange(e)}
-            />
+            <input id="email" type="email" onChange={this.handleChange} />
           </div>
 
           <div className="input-field">
             <label htmlFor="password">Password</label>
-            <input
-              id="password"
-              type="password"
-              onChange={(e) => this.handleChange(e)}
-            />
+            <input id="password" type="password" onChange={this.handleChange} />
           </div>
 
           <div className="input-field">
