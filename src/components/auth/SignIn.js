@@ -1,14 +1,20 @@
+/* eslint-disable jsx-a11y/label-has-associated-control */
 import React, { Component } from "react";
 
 class SignIn extends Component {
-  state = {
-    email: "",
-    password: "",
-  };
+  constructor() {
+    super();
+    /* eslint-disable react/no-unused-state */
+    this.state = {
+      email: "",
+      password: "",
+    };
+    /* eslint-enable react/no-unused-state */
+  }
 
   handleChange = (e) => {
     this.setState({
-      [e.target.id]: e.target.value
+      [e.target.id]: e.target.value,
     });
   };
 
@@ -41,7 +47,9 @@ class SignIn extends Component {
           </div>
 
           <div className="input-field">
-            <button className="btn pink lighten-1 z-depth-0">Login</button>
+            <button type="submiu" className="btn pink lighten-1 z-depth-0">
+              Login
+            </button>
           </div>
         </form>
       </div>
