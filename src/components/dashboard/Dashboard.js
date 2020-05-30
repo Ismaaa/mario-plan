@@ -1,7 +1,7 @@
-// livs
+// libs
 import React from "react";
 
-// components
+// Components
 import Notifications from "./Notifications";
 import ProjectList from "../projects/ProjectList";
 

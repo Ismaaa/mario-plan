@@ -1,6 +1,9 @@
+// libs
 import React from "react";
-import ProjectSummary from "./ProjectSummary";
 import { useSelector } from "react-redux";
+
+// Components
+import ProjectSummary from "./ProjectSummary";
 
 const ProjectList = () => {
   const projects = useSelector((state) => state.project.projects);

@@ -1,5 +1,9 @@
+/* eslint-disable react/jsx-one-expression-per-line */
+/* eslint-disable react/prop-types */
+/* eslint-disable react/destructuring-assignment */
+
+// libs
 import React from "react";
-import PropTypes from "prop-types";
 
 const ProjectDetails = (props) => {
   const { id } = props.computedMatch.params;

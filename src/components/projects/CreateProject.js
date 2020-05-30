@@ -20,7 +20,6 @@ class CreateProject extends Component {
 
   handleSubmit = (e) => {
     e.preventDefault();
-    console.log(this.state);
   };
 
   render() {
@@ -40,7 +39,7 @@ class CreateProject extends Component {
               id="content"
               className="materialize-textarea"
               onChange={this.handleChange}
-            ></textarea>
+            />
           </div>
 
           <div className="input-field">

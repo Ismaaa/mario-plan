@@ -1,4 +1,6 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
+
+// libs
 import React, { Component } from "react";
 
 class SignUp extends Component {
@@ -22,7 +24,6 @@ class SignUp extends Component {
 
   handleSubmit = (e) => {
     e.preventDefault();
-    console.log(this.state);
   };
 
   render() {
