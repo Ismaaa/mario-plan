@@ -1,3 +1,5 @@
+import { CREATE_PROJECT } from "../types/projectTypes";
+
 const INITIAL_STATE = {
   projects: [
     {
@@ -22,7 +24,13 @@ const INITIAL_STATE = {
 };
 
 const projectReducer = (state = INITIAL_STATE, action) => {
-  return state;
+  switch (action.type) {
+    case CREATE_PROJECT:
+      console.log(action.project);
+      return state;
+    default:
+      return state;
+  }
 };
 
 export default projectReducer;

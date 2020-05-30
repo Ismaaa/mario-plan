@@ -1,7 +1,8 @@
+import { CREATE_PROJECT } from "../types/projectTypes";
+
 export const createProject = (project) => {
   return (dispatch, getState) => {
-    console.log(project);
     // make async call to database
-    dispatch({ type: "CREATE_PROJECT", project: project });
+    dispatch({ type: CREATE_PROJECT, project: project });
   };
 };
