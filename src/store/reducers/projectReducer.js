@@ -30,7 +30,7 @@ const projectReducer = (state = INITIAL_STATE, action) => {
       console.log(action.project);
       return state;
     case CREATE_PROJECT_ERROR:
-      console.log(action.error);
+      console.error(CREATE_PROJECT_ERROR, action.error);
       return state;
     default:
       return state;
