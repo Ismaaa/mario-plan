@@ -2,7 +2,7 @@ import firebase from "firebase/app";
 import "firebase/firestore";
 import "firebase/auth";
 
-const config = {
+const CONFIG = {
   apiKey: "AIzaSyCCm7lqvUaIBg8rWAzaXWHV3DCRd5z-ctA",
   authDomain: "ismaaa-project-mario.firebaseapp.com",
   databaseURL: "https://ismaaa-project-mario.firebaseio.com",
@@ -13,7 +13,7 @@ const config = {
   measurementId: "G-3KTM4MXNVK",
 };
 
-firebase.initializeApp(config);
+firebase.initializeApp(CONFIG);
 firebase.firestore().settings();
 
 export default firebase;
