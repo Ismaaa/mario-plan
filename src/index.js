@@ -16,7 +16,7 @@ import App from "./App";
 // Styles
 import "./index.css";
 
-import rootReducer from "./store/reducers";
+import rootReducer from "./store/reducers/rootReducer";
 
 const store = createStore(
   rootReducer,
