@@ -8,7 +8,7 @@ import { getFirestore, reduxFirestore } from "redux-firestore";
 import { getFirebase, reactReduxFirebase } from "react-redux-firebase";
 
 // Config
-import firebaseConfig from "./config/firebaseConfig";
+import firebaseConfig from "./services/Firebase";
 
 // Components
 import App from "./App";
