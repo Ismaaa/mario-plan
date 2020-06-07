@@ -1,21 +1,26 @@
 // libs
 import React from "react";
 import { useSelector } from "react-redux";
+import { useFirestoreConnect } from "react-redux-firebase";
 
 // Components
 import ProjectSummary from "./ProjectSummary";
 
 const ProjectList = () => {
-  const projects = useSelector((state) => state.project.projects);
+  const projects = useSelector((state) => state.firestore.data.projects);
+
+  useFirestoreConnect(["projects"]);
 
   return (
     <div className="project-list section">
-      {projects.map((project) => {
-        const { id, title, content } = project;
-        return (
-          <ProjectSummary key={id} id={id} title={title} content={content} />
-        );
-      })}
+      {projects &&
+        Object.entries(projects).map(([id, project]) => (
+          <ProjectSummary
+            key={id}
+            title={project.title}
+            content={project.content}
+          />
+        ))}
     </div>
   );
 };
