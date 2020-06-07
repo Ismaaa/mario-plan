@@ -1,4 +1,4 @@
-// Types
+// types
 import { CREATE_PROJECT, CREATE_PROJECT_ERROR } from "../types/projectTypes";
 
 const INITIAL_STATE = {
