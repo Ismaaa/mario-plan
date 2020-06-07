@@ -2,8 +2,8 @@
 import { CREATE_PROJECT, CREATE_PROJECT_ERROR } from "../types/projectTypes";
 
 export const createProject = (project) => {
-  return (dispatch, getState, { getFirebase, getFirestore }) => {
-    const firestore = getFirestore();
+  return (dispatch, getState, { getFirebase }) => {
+    const firestore = getFirebase().firestore();
 
     firestore
       .collection("projects")

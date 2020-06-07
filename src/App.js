@@ -8,7 +8,7 @@ import Dashboard from "./components/dashboard/Dashboard";
 import ProjectDetails from "./components/projects/ProjectDetails";
 import SignIn from "./components/auth/SignIn";
 // import SignUp from "./components/auth/SignUp";
-// import CreateProject from "./components/projects/CreateProject";
+import CreateProject from "./components/projects/CreateProject";
 
 const App = () => {
   return (
@@ -17,7 +17,7 @@ const App = () => {
       <Switch>
         <Route exact path="/" component={Dashboard} />
         <ProjectDetails path="/project/:id" />
-        {/* <CreateProject path="/create" /> */}
+        <CreateProject path="/create" />
         <SignIn path="/sign-in" />
         {/* <SignUp path="/sign-up" /> */}
       </Switch>
