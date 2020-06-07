@@ -10,7 +10,7 @@ import Dashboard from "./components/dashboard/Dashboard";
 // import SignUp from "./components/auth/SignUp";
 // import CreateProject from "./components/projects/CreateProject";
 
-function App() {
+const App = () => {
   return (
     <BrowserRouter>
       <Navbar />
@@ -23,6 +23,6 @@ function App() {
       </Switch>
     </BrowserRouter>
   );
-}
+};
 
 export default App;
