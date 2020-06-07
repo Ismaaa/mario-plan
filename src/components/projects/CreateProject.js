@@ -4,7 +4,7 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 
-// Actions
+// actions
 import { createProject } from "../../store/actions/projectActions";
 
 const CreateProject = () => {

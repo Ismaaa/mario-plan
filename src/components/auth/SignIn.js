@@ -2,10 +2,16 @@
 
 // libs
 import React, { useState } from "react";
+import { useDispatch } from "react-redux";
+
+// actions
+import { signIn } from "../../store/actions/authActions";
 
 const SignIn = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+
+  const dispatch = useDispatch();
 
   const handleEmailChange = (e) => {
     setEmail(e.target.value);
@@ -17,6 +23,12 @@ const SignIn = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    dispatch(
+      signIn({
+        email,
+        password,
+      })
+    );
   };
 
   return (
