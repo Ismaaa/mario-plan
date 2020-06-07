@@ -62,7 +62,7 @@ const SignIn = () => {
             Login
           </button>
         </div>
-        {auth.authError}
+        <div className="red-text">{auth.authError}</div>
       </form>
     </div>
   );
