@@ -14,7 +14,7 @@ const ProjectDetails = ({ computedMatch }) => {
     if (projects) {
       setProject(projects[id]);
     }
-  }, [projects]);
+  }, [id, projects]);
 
   if (project) {
     return (
