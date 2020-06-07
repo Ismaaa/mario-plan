@@ -35,13 +35,8 @@ const ProjectDetails = ({ computedMatch }) => {
   }
 
   return (
-    <div className="container section project-details">
-      <div className="card z-depth-0">
-        <div className="card-content">
-          <span className="card-title">Project not found</span>
-        </div>
-        <div className="card-action grey lighten-4 grey-text"></div>
-      </div>
+    <div className="container center">
+      <p>Loading project...</p>
     </div>
   );
 };
