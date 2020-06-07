@@ -2,7 +2,7 @@
 
 // libs
 import React, { useState } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 
 // actions
 import { signIn } from "../../store/actions/authActions";
@@ -12,6 +12,7 @@ const SignIn = () => {
   const [password, setPassword] = useState("");
 
   const dispatch = useDispatch();
+  const auth = useSelector((state) => state.auth);
 
   const handleEmailChange = (e) => {
     setEmail(e.target.value);
@@ -61,6 +62,7 @@ const SignIn = () => {
             Login
           </button>
         </div>
+        {auth.authError}
       </form>
     </div>
   );

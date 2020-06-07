@@ -1,7 +1,9 @@
 // types
 import { LOGIN_SUCCESS, LOGIN_ERROR } from "../types/authTypes";
 
-const INITIAL_STATE = {};
+const INITIAL_STATE = {
+  authError: null,
+};
 
 const authReducer = (state = INITIAL_STATE, action) => {
   switch (action.type) {
