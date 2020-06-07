@@ -1,24 +1,46 @@
 // libs
-import React from "react";
+import React, { useState, useEffect } from "react";
+import { useFirestoreConnect } from "react-redux-firebase";
+import { useSelector } from "react-redux";
 
 const ProjectDetails = ({ computedMatch }) => {
   const { id } = computedMatch.params;
+  const [project, setProject] = useState({});
+  const projects = useSelector((state) => state.firestore.data.projects);
+
+  useFirestoreConnect(["projects"]);
+
+  useEffect(() => {
+    if (projects) {
+      setProject(projects[id]);
+    }
+  }, [projects]);
+
+  if (project) {
+    return (
+      <div className="container section project-details">
+        <div className="card z-depth-0">
+          <div className="card-content">
+            <span className="card-title">{project.title}</span>
+            <p>{project.content}</p>
+          </div>
+          <div className="card-action grey lighten-4 grey-text">
+            <div>
+              Posted by {project.authorFirstName} {project.authorLastName}
+            </div>
+          </div>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="container section project-details">
       <div className="card z-depth-0">
         <div className="card-content">
-          <span className="card-title">#{id} - Project Title</span>
-          <p>
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laboriosam
-            perferendis voluptatem facilis vel velit cum sequi molestias, aut
-            eos natus, maxime dolorum sint possimus veniam ad eius est non quae.
-          </p>
+          <span className="card-title">Project not found</span>
         </div>
-        <div className="card-action grey lighten-4 grey-text">
-          <div>Posted by Ismail Didouh</div>
-          <div>30th May, 2020 - 15:07</div>
-        </div>
+        <div className="card-action grey lighten-4 grey-text"></div>
       </div>
     </div>
   );
