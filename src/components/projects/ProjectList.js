@@ -2,6 +2,7 @@
 import React from "react";
 import { useSelector } from "react-redux";
 import { useFirestoreConnect } from "react-redux-firebase";
+import { Link } from "react-router-dom";
 
 // Components
 import ProjectSummary from "./ProjectSummary";
@@ -14,11 +15,9 @@ const ProjectList = () => {
     <div className="project-list section">
       {projects &&
         Object.entries(projects).map(([id, project]) => (
-          <ProjectSummary
-            key={id}
-            title={project.title}
-            content={project.content}
-          />
+          <Link to={`/project/${id}`} key={id}>
+            <ProjectSummary title={project.title} content={project.content} />
+          </Link>
         ))}
     </div>
   );
