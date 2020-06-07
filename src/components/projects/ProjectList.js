@@ -7,9 +7,8 @@ import { useFirestoreConnect } from "react-redux-firebase";
 import ProjectSummary from "./ProjectSummary";
 
 const ProjectList = () => {
-  const projects = useSelector((state) => state.firestore.data.projects);
-
   useFirestoreConnect(["projects"]);
+  const projects = useSelector((state) => state.firestore.data.projects);
 
   return (
     <div className="project-list section">
