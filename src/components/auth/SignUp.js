@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/label-has-associated-control */
 // libs
 import React, { useState } from "react";
 
@@ -49,6 +50,7 @@ const SignUp = () => {
             type="password"
             value={password}
             onChange={handlePasswordChange}
+            autoComplete="on"
           />
         </div>
         <div className="input-field">
