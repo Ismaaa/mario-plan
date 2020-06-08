@@ -17,7 +17,7 @@ import PrivateRoute from "./components/route/PrivateRoute";
 import GuestRoute from "./components/route/GuestRoute";
 
 const App = () => {
-  const auth = useSelector((state) => state.firebase.auth);
+  const { auth } = useSelector((state) => state.firebase);
 
   if (!isLoaded(auth)) return <></>;
 

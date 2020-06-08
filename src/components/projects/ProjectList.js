@@ -9,7 +9,7 @@ import ProjectSummary from "./ProjectSummary";
 
 const ProjectList = () => {
   useFirestoreConnect(["projects"]);
-  const projects = useSelector((state) => state.firestore.data.projects);
+  const { projects } = useSelector((state) => state.firestore.data);
 
   return (
     <div className="project-list section">

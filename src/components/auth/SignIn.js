@@ -12,7 +12,7 @@ const SignIn = () => {
   const [password, setPassword] = useState("");
 
   const dispatch = useDispatch();
-  const auth = useSelector((state) => state.auth);
+  const { auth } = useSelector((state) => state);
 
   const handleEmailChange = (e) => {
     setEmail(e.target.value);

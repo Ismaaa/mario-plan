@@ -8,7 +8,7 @@ import SignedInLinks from "./SignedInLinks";
 import SignedOutLinks from "./SignedOutLinks";
 
 const Navbar = () => {
-  const auth = useSelector((state) => state.firebase.auth);
+  const { auth } = useSelector((state) => state.firebase);
 
   return (
     <nav className="nav-wrapper grey darken-3">

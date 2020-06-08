@@ -8,7 +8,7 @@ const ProjectDetails = ({ match }) => {
   const { id } = match.params;
 
   const [project, setProject] = useState();
-  const projects = useSelector((state) => state.firestore.data.projects);
+  const { projects } = useSelector((state) => state.firestore.data);
 
   useFirestoreConnect(["projects"]);
 
