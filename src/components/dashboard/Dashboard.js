@@ -10,7 +10,7 @@ import ProjectList from "../projects/ProjectList";
 const Dashboard = () => {
   const auth = useSelector((state) => state.firebase.auth);
 
-  if (!auth.uid) return <Redirect to="signin" />;
+  if (!auth.uid) return <Redirect to="sign-in" />;
 
   return (
     <div className="dashboard container">
