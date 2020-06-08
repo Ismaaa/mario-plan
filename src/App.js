@@ -12,6 +12,7 @@ import SignIn from "./components/auth/SignIn";
 import SignUp from "./components/auth/SignUp";
 import CreateProject from "./components/projects/CreateProject";
 import PrivateRoute from "./components/route/PrivateRoute";
+import GuestRoute from "./components/route/GuestRoute";
 
 const App = () => {
   const auth = useSelector((state) => state.firebase.auth);
@@ -25,8 +26,8 @@ const App = () => {
         <PrivateRoute exact path="/" component={Dashboard} />
         <PrivateRoute path="/project/:id" component={ProjectDetails} />
         <PrivateRoute path="/create" component={CreateProject} />
-        <SignIn path="/sign-in" />
-        <SignUp path="/sign-up" />
+        <GuestRoute path="/sign-in" component={SignIn} />
+        <GuestRoute path="/sign-up" component={SignUp} />
       </Switch>
     </BrowserRouter>
   );
