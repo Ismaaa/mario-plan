@@ -11,6 +11,8 @@ import ProjectDetails from "./components/projects/ProjectDetails";
 import SignIn from "./components/auth/SignIn";
 import SignUp from "./components/auth/SignUp";
 import CreateProject from "./components/projects/CreateProject";
+
+// route guards
 import PrivateRoute from "./components/route/PrivateRoute";
 import GuestRoute from "./components/route/GuestRoute";
 

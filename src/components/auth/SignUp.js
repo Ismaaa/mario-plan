@@ -1,12 +1,19 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
 // libs
 import React, { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+
+// actions
+import { signUp } from "../../store/actions/authActions";
 
 const SignUp = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
+
+  const dispatch = useDispatch();
+  const auth = useSelector((state) => state.auth);
 
   const handleEmailChange = (e) => {
     setEmail(e.target.value);
@@ -26,7 +33,14 @@ const SignUp = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(email, password, firstName, lastName);
+    dispatch(
+      signUp({
+        email,
+        password,
+        firstName,
+        lastName,
+      })
+    );
   };
 
   return (
@@ -40,6 +54,7 @@ const SignUp = () => {
             type="email"
             value={email}
             onChange={handleEmailChange}
+            required
           />
         </div>
 
@@ -51,6 +66,7 @@ const SignUp = () => {
             value={password}
             onChange={handlePasswordChange}
             autoComplete="on"
+            required
           />
         </div>
         <div className="input-field">
@@ -60,6 +76,7 @@ const SignUp = () => {
             type="text"
             value={firstName}
             onChange={handleFirstNameChange}
+            required
           />
         </div>
 
@@ -70,6 +87,7 @@ const SignUp = () => {
             type="text"
             value={lastName}
             onChange={handleLastNameChange}
+            required
           />
         </div>
 
@@ -78,6 +96,7 @@ const SignUp = () => {
             Login
           </button>
         </div>
+        <div className="red-text">{auth.authError}</div>
       </form>
     </div>
   );

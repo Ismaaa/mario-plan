@@ -1,5 +1,7 @@
 // types
 import {
+  SIGNUP_SUCCESS,
+  SIGNUP_ERROR,
   LOGIN_SUCCESS,
   LOGIN_ERROR,
   LOGOUT_SUCCESS,
@@ -12,12 +14,18 @@ const INITIAL_STATE = {
 
 const authReducer = (state = INITIAL_STATE, action) => {
   switch (action.type) {
-    case LOGIN_ERROR:
-      console.error("Login failed", action.error);
-      return { ...state, authError: "Login Failed" };
+    case SIGNUP_SUCCESS:
+      console.log("Signup success");
+      return { ...state, authError: null };
+    case SIGNUP_ERROR:
+      console.error("Signup failed", action.error);
+      return { ...state, authError: action.error.message };
     case LOGIN_SUCCESS:
       console.log("Login success");
       return { ...state, authError: null };
+    case LOGIN_ERROR:
+      console.error("Login failed", action.error);
+      return { ...state, authError: "Login Failed" };
     case LOGOUT_SUCCESS:
       console.log("Logout success");
       return { ...state, authError: null };
