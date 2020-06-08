@@ -4,14 +4,16 @@ import { CREATE_PROJECT, CREATE_PROJECT_ERROR } from "../types/projectTypes";
 export const createProject = (project) => {
   return (dispatch, getState, { getFirebase }) => {
     const firestore = getFirebase().firestore();
+    const { firstName, lastName } = getState().firebase.profile;
+    const { uid } = getState().firebase.auth;
 
     firestore
       .collection("projects")
       .add({
         ...project,
-        authorFirstName: "Ismail",
-        authorLastName: "Didouh",
-        authorId: 1,
+        authorFirstName: firstName,
+        authorLastName: lastName,
+        authorId: uid,
         createdAt: new Date(),
       })
       .then(() => {
