@@ -1,13 +1,14 @@
 // libs
 import React from "react";
 import { NavLink } from "react-router-dom";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 
 // actions
 import { signOut } from "../../store/actions/authActions";
 
 const SignedInLinks = () => {
   const dispatch = useDispatch();
+  const { profile } = useSelector((state) => state.firebase);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -26,7 +27,7 @@ const SignedInLinks = () => {
       </li>
       <li>
         <NavLink to="/" className="btn btn-floating pink lighten-1">
-          ID
+          {profile.initials}
         </NavLink>
       </li>
     </ul>
