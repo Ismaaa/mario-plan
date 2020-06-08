@@ -1,5 +1,9 @@
-/* eslint-disable import/prefer-default-export */
-import { LOGIN_SUCCESS, LOGIN_ERROR } from "../types/authTypes";
+import {
+  LOGIN_SUCCESS,
+  LOGIN_ERROR,
+  LOGOUT_SUCCESS,
+  LOGOUT_ERROR,
+} from "../types/authTypes";
 
 export const signIn = (credentials) => {
   return (dispatch, getState, { getFirebase }) => {
@@ -13,6 +17,22 @@ export const signIn = (credentials) => {
       })
       .catch((error) => {
         dispatch({ type: LOGIN_ERROR, error });
+      });
+  };
+};
+
+export const signOut = () => {
+  return (dispatch, getState, { getFirebase }) => {
+    const firebase = getFirebase();
+
+    firebase
+      .auth()
+      .signOut()
+      .then(() => {
+        dispatch({ type: LOGOUT_SUCCESS });
+      })
+      .catch((error) => {
+        dispatch({ type: LOGOUT_ERROR, error });
       });
   };
 };
