@@ -2,8 +2,7 @@
 
 // libs
 import React, { useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { Redirect } from "react-router-dom";
+import { useDispatch } from "react-redux";
 
 // actions
 import { createProject } from "../../store/actions/projectActions";
@@ -12,7 +11,6 @@ const CreateProject = () => {
   const [title, setTitle] = useState("");
   const [content, setContent] = useState("");
 
-  const auth = useSelector((state) => state.firebase.auth);
   const dispatch = useDispatch();
 
   const handleTitleChange = (e) => {
@@ -32,8 +30,6 @@ const CreateProject = () => {
       })
     );
   };
-
-  if (!auth.uid) return <Redirect to="sign-in" />;
 
   return (
     <div className="container">

@@ -1,6 +1,6 @@
 // libs
 import React from "react";
-import { BrowserRouter, Switch, Route } from "react-router-dom";
+import { BrowserRouter, Switch } from "react-router-dom";
 import { isLoaded } from "react-redux-firebase";
 import { useSelector } from "react-redux";
 
@@ -11,6 +11,7 @@ import ProjectDetails from "./components/projects/ProjectDetails";
 import SignIn from "./components/auth/SignIn";
 import SignUp from "./components/auth/SignUp";
 import CreateProject from "./components/projects/CreateProject";
+import PrivateRoute from "./components/route/PrivateRoute";
 
 const App = () => {
   const auth = useSelector((state) => state.firebase.auth);
@@ -21,9 +22,9 @@ const App = () => {
     <BrowserRouter>
       <Navbar />
       <Switch>
-        <Route exact path="/" component={Dashboard} />
-        <ProjectDetails path="/project/:id" />
-        <CreateProject path="/create" />
+        <PrivateRoute exact path="/" component={Dashboard} />
+        <PrivateRoute path="/project/:id" component={ProjectDetails} />
+        <PrivateRoute path="/create" component={CreateProject} />
         <SignIn path="/sign-in" />
         <SignUp path="/sign-up" />
       </Switch>
