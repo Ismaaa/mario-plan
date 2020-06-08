@@ -16,7 +16,12 @@ const ProjectList = () => {
       {projects &&
         Object.entries(projects).map(([id, project]) => (
           <Link to={`/project/${id}`} key={id}>
-            <ProjectSummary title={project.title} content={project.content} />
+            <ProjectSummary
+              title={project.title}
+              content={project.content}
+              authorFirstName={project.authorFirstName}
+              authorLastName={project.authorLastName}
+            />
           </Link>
         ))}
     </div>
