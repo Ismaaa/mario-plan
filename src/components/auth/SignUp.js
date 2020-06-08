@@ -93,7 +93,7 @@ const SignUp = () => {
 
         <div className="input-field">
           <button type="submit" className="btn pink lighten-1 z-depth-0">
-            Login
+            Sign Up
           </button>
         </div>
         <div className="red-text">{auth.authError}</div>
