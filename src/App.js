@@ -1,6 +1,8 @@
 // libs
 import React from "react";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
+import { isLoaded } from "react-redux-firebase";
+import { useSelector } from "react-redux";
 
 // components
 import Navbar from "./components/layout/Navbar";
@@ -11,6 +13,10 @@ import SignUp from "./components/auth/SignUp";
 import CreateProject from "./components/projects/CreateProject";
 
 const App = () => {
+  const auth = useSelector((state) => state.firebase.auth);
+
+  if (!isLoaded(auth)) return <></>;
+
   return (
     <BrowserRouter>
       <Navbar />
