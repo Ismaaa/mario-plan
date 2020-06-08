@@ -16,11 +16,7 @@ const Navbar = () => {
         <Link to="/" className="brand-logo">
           MarioPlan
         </Link>
-        {auth.isLoaded && !auth.isEmpty ? (
-          <SignedInLinks />
-        ) : (
-          <SignedOutLinks />
-        )}
+        {auth.uid ? <SignedInLinks /> : <SignedOutLinks />}
       </div>
     </nav>
   );

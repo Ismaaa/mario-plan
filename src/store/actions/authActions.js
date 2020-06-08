@@ -1,3 +1,4 @@
+// types
 import {
   LOGIN_SUCCESS,
   LOGIN_ERROR,
