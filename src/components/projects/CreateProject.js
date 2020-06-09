@@ -3,6 +3,7 @@
 // libs
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
+import { useHistory } from "react-router-dom";
 
 // actions
 import { createProject } from "../../store/actions/projectActions";
@@ -12,6 +13,7 @@ const CreateProject = () => {
   const [content, setContent] = useState("");
 
   const dispatch = useDispatch();
+  const history = useHistory();
 
   const handleTitleChange = (e) => {
     setTitle(e.target.value);
@@ -29,6 +31,7 @@ const CreateProject = () => {
         content,
       })
     );
+    history.push("/");
   };
 
   return (
@@ -37,12 +40,7 @@ const CreateProject = () => {
         <h5 className="grey-text text-darken-3">Create a project</h5>
         <div className="input-field">
           <label htmlFor="title">Title</label>
-          <input
-            id="title"
-            type="text"
-            value={title}
-            onChange={handleTitleChange}
-          />
+          <input id="title" type="text" value={title} onChange={handleTitleChange} />
         </div>
 
         <div className="input-field">
