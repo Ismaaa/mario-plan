@@ -1,7 +1,9 @@
 // types
 import { CREATE_PROJECT, CREATE_PROJECT_ERROR } from "../types/projectTypes";
 
-const projectReducer = (state, action) => {
+const INITIAL_STATE = {};
+
+const projectReducer = (state = INITIAL_STATE, action) => {
   switch (action.type) {
     case CREATE_PROJECT:
       console.log(action.project);
