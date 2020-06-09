@@ -2,18 +2,13 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-const ProjectSummary = ({
-  title,
-  content,
-  authorFirstName,
-  authorLastName,
-}) => (
+const ProjectSummary = ({ title, content, authorFirstName, authorLastName, date }) => (
   <div className="card z-depth-0 project-summary">
     <div className="card-content grey-text text-darken-3">
       <span className="card-title">{title}</span>
       <p>{content}</p>
       <p className="grey-text">
-        Posted by {authorFirstName} {authorLastName}
+        Posted {date} by {authorFirstName} {authorLastName}
       </p>
     </div>
   </div>
