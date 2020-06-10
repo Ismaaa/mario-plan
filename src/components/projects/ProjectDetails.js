@@ -1,7 +1,7 @@
 // libs
-import React, { useState, useEffect } from "react";
-import { useFirestoreConnect } from "react-redux-firebase";
+import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
+import { useFirestoreConnect } from "react-redux-firebase";
 import { Link } from "react-router-dom";
 
 const ProjectDetails = ({ match }) => {

@@ -2,8 +2,8 @@
 import React from "react";
 
 // Components
-import Notifications from "./Notifications";
 import ProjectList from "../projects/ProjectList";
+import Notifications from "./Notifications";
 
 const Dashboard = () => (
   <div className="dashboard container">

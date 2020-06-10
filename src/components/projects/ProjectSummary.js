@@ -1,6 +1,6 @@
 // libs
-import React from "react";
 import PropTypes from "prop-types";
+import React from "react";
 
 const ProjectSummary = ({ title, content, authorFirstName, authorLastName, date }) => (
   <div className="card z-depth-0 project-summary">

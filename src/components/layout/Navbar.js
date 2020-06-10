@@ -1,7 +1,7 @@
 // libs
 import React from "react";
-import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
+import { Link } from "react-router-dom";
 
 // Components
 import SignedInLinks from "./SignedInLinks";

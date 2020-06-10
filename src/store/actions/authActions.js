@@ -1,11 +1,11 @@
 // types
 import {
-  SIGNUP_SUCCESS,
-  SIGNUP_ERROR,
-  LOGIN_SUCCESS,
   LOGIN_ERROR,
-  LOGOUT_SUCCESS,
+  LOGIN_SUCCESS,
   LOGOUT_ERROR,
+  LOGOUT_SUCCESS,
+  SIGNUP_ERROR,
+  SIGNUP_SUCCESS,
 } from "../types/authTypes";
 
 export const signUp = (newUser) => (dispatch, getState, { getFirebase }) => {
