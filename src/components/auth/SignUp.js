@@ -49,13 +49,7 @@ const SignUp = () => {
         <h5 className="grey-text text-darken-3">Sign Up</h5>
         <div className="input-field">
           <label htmlFor="email">Email</label>
-          <input
-            id="email"
-            type="email"
-            value={email}
-            onChange={handleEmailChange}
-            required
-          />
+          <input id="email" type="email" value={email} onChange={handleEmailChange} required />
         </div>
 
         <div className="input-field">

@@ -38,12 +38,7 @@ const SignIn = () => {
         <h5 className="grey-text text-darken-3">Sign In</h5>
         <div className="input-field">
           <label htmlFor="email">Email</label>
-          <input
-            id="email"
-            type="email"
-            value={email}
-            onChange={handleEmailChange}
-          />
+          <input id="email" type="email" value={email} onChange={handleEmailChange} />
         </div>
 
         <div className="input-field">
