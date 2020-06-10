@@ -1,20 +1,19 @@
 // libs
 import React from "react";
-import { BrowserRouter, Switch } from "react-router-dom";
-import { isLoaded } from "react-redux-firebase";
 import { useSelector } from "react-redux";
+import { isLoaded } from "react-redux-firebase";
+import { BrowserRouter, Switch } from "react-router-dom";
 
 // components
-import Navbar from "./components/layout/Navbar";
-import Dashboard from "./components/dashboard/Dashboard";
-import ProjectDetails from "./components/projects/ProjectDetails";
 import SignIn from "./components/auth/SignIn";
 import SignUp from "./components/auth/SignUp";
+import Dashboard from "./components/dashboard/Dashboard";
+import Navbar from "./components/layout/Navbar";
 import CreateProject from "./components/projects/CreateProject";
-
+import ProjectDetails from "./components/projects/ProjectDetails";
+import GuestRoute from "./components/route/GuestRoute";
 // route guards
 import PrivateRoute from "./components/route/PrivateRoute";
-import GuestRoute from "./components/route/GuestRoute";
 
 const App = () => {
   const { auth } = useSelector((state) => state.firebase);

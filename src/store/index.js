@@ -1,13 +1,12 @@
 // libs
-import { applyMiddleware, compose, createStore } from "redux";
-import thunk from "redux-thunk";
-import { reduxFirestore } from "redux-firestore";
 import { getFirebase } from "react-redux-firebase";
+import { applyMiddleware, compose, createStore } from "redux";
+import { reduxFirestore } from "redux-firestore";
 import { createLogger } from "redux-logger";
+import thunk from "redux-thunk";
 
 // config
 import firebaseConfig from "../services/firebase/config";
-
 // reducers
 import rootReducer from "./reducers/rootReducer";
 

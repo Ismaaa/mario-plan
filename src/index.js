@@ -1,18 +1,17 @@
+// Styles
+import "./index.css";
+
 // libs
 import React from "react";
 import ReactDOM from "react-dom";
 import { Provider } from "react-redux";
 import { ReactReduxFirebaseProvider } from "react-redux-firebase";
 
+// Components
+import App from "./App";
 // Config
 import FirebaseProvider from "./services/firebase/FirebaseProvider";
 import store from "./store";
-
-// Components
-import App from "./App";
-
-// Styles
-import "./index.css";
 
 ReactDOM.render(
   <React.StrictMode>
