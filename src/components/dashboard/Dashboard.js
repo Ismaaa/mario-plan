@@ -3,7 +3,7 @@ import React from "react";
 
 // Components
 import ProjectList from "../projects/ProjectList";
-import Notifications from "./Notifications";
+import NotificationsList from "./NotificationsList";
 
 const Dashboard = () => (
   <div className="dashboard container">
@@ -12,7 +12,7 @@ const Dashboard = () => (
         <ProjectList />
       </div>
       <div className="col s12 m5 offset-m1">
-        <Notifications />
+        <NotificationsList />
       </div>
     </div>
   </div>

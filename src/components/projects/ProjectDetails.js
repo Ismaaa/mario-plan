@@ -6,11 +6,10 @@ import { Link } from "react-router-dom";
 
 const ProjectDetails = ({ match }) => {
   const { id } = match.params;
+  useFirestoreConnect(["projects"]);
 
   const [project, setProject] = useState();
   const { projects } = useSelector((state) => state.firestore.data);
-
-  useFirestoreConnect(["projects"]);
 
   useEffect(() => {
     if (projects) {
