@@ -20,7 +20,7 @@ const createNotification = (notification) => {
     });
 };
 
-exports.projectCreated = functions.firestore.document("projects/projectId").onCreate((doc) => {
+exports.projectCreated = functions.firestore.document("projects/{projectId}").onCreate((doc) => {
   const project = doc.data();
   const notification = {
     content: "Added a new project",
