@@ -6,7 +6,7 @@ import { useFirestoreConnect } from "react-redux-firebase";
 import { Link } from "react-router-dom";
 
 // Components
-import ProjectSummary from "./ProjectSummary";
+import ProjectItem from "./ProjectItem";
 
 const ProjectList = () => {
   useFirestoreConnect(["projects"]);
@@ -17,7 +17,7 @@ const ProjectList = () => {
       {projects &&
         Object.entries(projects).map(([id, project]) => (
           <Link to={`/project/${id}`} key={id}>
-            <ProjectSummary
+            <ProjectItem
               title={project.title}
               content={project.content}
               authorFirstName={project.authorFirstName}
