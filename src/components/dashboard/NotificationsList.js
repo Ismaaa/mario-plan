@@ -17,11 +17,11 @@ const NotificationsList = () => {
             {notifications &&
               Object.entries(notifications).map(([id, notification]) => (
                 <li key={id}>
-                  <span className="pink-text">{notification.user}</span>
+                  <span className="pink-text">{notification.user}&nbsp;</span>
                   <span>{notification.content}</span>
-                  <span className="grey-text note-date">
+                  <div className="grey-text note-date">
                     {moment(notification.time.toDate()).fromNow()}
-                  </span>
+                  </div>
                 </li>
               ))}
           </ul>
