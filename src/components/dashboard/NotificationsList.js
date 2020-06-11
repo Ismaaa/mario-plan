@@ -5,7 +5,10 @@ import { useSelector } from "react-redux";
 import { useFirestoreConnect } from "react-redux-firebase";
 
 const NotificationsList = () => {
-  useFirestoreConnect(["notifications"]);
+  useFirestoreConnect({
+    collection: "notifications",
+    limit: 5,
+  });
   const { notifications } = useSelector((state) => state.firestore.data);
 
   return (
