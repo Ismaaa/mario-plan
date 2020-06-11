@@ -8,6 +8,7 @@ const NotificationsList = () => {
   useFirestoreConnect({
     collection: "notifications",
     limit: 5,
+    orderBy: ["time", "desc"],
   });
   const { notifications } = useSelector((state) => state.firestore.data);
 
