@@ -8,14 +8,8 @@ const ProjectDetails = ({ match }) => {
   const { id } = match.params;
   useFirestoreConnect(["projects"]);
 
-  const [project, setProject] = useState();
   const { projects } = useSelector((state) => state.firestore.data);
-
-  useEffect(() => {
-    if (projects) {
-      setProject(projects[id]);
-    }
-  }, [id, projects]);
+  const project = projects && projects[id];
 
   if (!project)
     return (
