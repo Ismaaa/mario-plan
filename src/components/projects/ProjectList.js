@@ -9,7 +9,12 @@ import { Link } from "react-router-dom";
 import ProjectItem from "./ProjectItem";
 
 const ProjectList = () => {
-  useFirestoreConnect(["projects"]);
+  useFirestoreConnect({
+    collection: "projects",
+    limit: 5,
+    orderBy: ["createdAt", "desc"],
+  });
+
   const { projects } = useSelector((state) => state.firestore.data);
 
   return (
