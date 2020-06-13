@@ -2,4 +2,4 @@
 
 # How to run the project
 
-# Technologies used
+# Tecnologies used
