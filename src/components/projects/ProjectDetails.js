@@ -1,16 +1,23 @@
 // libs
 import React from "react";
 import { useSelector } from "react-redux";
-import { useFirestoreConnect } from "react-redux-firebase";
+import { isLoaded, useFirestoreConnect } from "react-redux-firebase";
 import { Link } from "react-router-dom";
 
 const ProjectDetails = ({ match }) => {
   const { id } = match.params;
-  useFirestoreConnect(["projects"]);
+  useFirestoreConnect({
+    collection: "projects",
+    orderBy: ["createdAt", "desc"],
+  });
 
   const { projects } = useSelector((state) => state.firestore.data);
   const project = projects && projects[id];
 
+  // loading...
+  if (!isLoaded(projects)) return <span />;
+
+  // 404
   if (!project)
     return (
       <div className="container section project-details">
