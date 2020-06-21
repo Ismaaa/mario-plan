@@ -8,6 +8,7 @@ const ProjectDetails = ({ match }) => {
   const { id } = match.params;
   useFirestoreConnect({
     collection: "projects",
+    limit: 5,
     orderBy: ["createdAt", "desc"],
   });
 
